@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from services.generator import Generator
 from solver.backtracking_solver import BacktrackingSolver
+from services.leaderboard_manager import LeaderboardManager
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
@@ -45,6 +46,11 @@ def solve():
 
     return render_template("index.html", board=board.grid, difficulty="custom")
 
+@app.route("/leaderboard")
+def leaderboard():
+    lb = LeaderboardManager()
+    players = lb.load()
+    return render_template("leaderboard.html", players=players)
 
 if __name__ == "__main__":
     app.run(debug=True)

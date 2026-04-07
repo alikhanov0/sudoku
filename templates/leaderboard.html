@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>🏆 Leaderboard</h2>
+
+<div class="container">
+    <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Time (s)</th>
+            <th>Difficulty</th>
+        </tr>
+        {% for player in players %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ player.name }}</td>
+            <td>{{ player.time }}</td>
+            <td>{{ player.difficulty }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">← Back to game</a>
+</div>
+
+</body>
+</html>
