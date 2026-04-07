@@ -4,7 +4,6 @@ body {
     text-align: center;
 }
 
-/* контейнер */
 .container {
     display: inline-block;
     background: white;
@@ -13,24 +12,26 @@ body {
     box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
-/* таблица */
+/* 🔥 фиксируем размер всей сетки */
 table {
     border-collapse: collapse;
     margin: 20px auto;
+    width: 450px;   /* 9 * 50 */
+    height: 450px;
 }
 
 /* каждая клетка */
 td {
     width: 50px;
     height: 50px;
-    border: 1px solid #bbb;
     padding: 0;
+    border: 1px solid #bbb;
 }
 
-/* input внутри */
+/* input */
 input {
-    width: 50px;
-    height: 50px;
+    width: 100%;
+    height: 100%;
     text-align: center;
     font-size: 20px;
     border: none;
@@ -38,7 +39,12 @@ input {
     box-sizing: border-box;
 }
 
-/* жирные линии 3x3 */
+input:focus {
+    outline: none;
+    caret-color: transparent; /* убирает курсор */
+}
+
+/* жирные линии */
 tr:nth-child(3n) td {
     border-bottom: 3px solid black;
 }
@@ -47,7 +53,6 @@ td:nth-child(3n) {
     border-right: 3px solid black;
 }
 
-/* верх и левый край */
 table tr:first-child td {
     border-top: 3px solid black;
 }
@@ -74,4 +79,46 @@ button:hover {
 select {
     padding: 8px;
     border-radius: 6px;
+}
+
+/* подсветка */
+.highlight {
+    background-color: #e6f0ff;
+}
+
+/* активная клетка */
+.active {
+    background-color: #cce0ff;
+}
+
+/* фиксированные (как на сайте) */
+.fixed {
+    color: #1a237e;
+    font-weight: bold;
+}
+
+/* пользовательские */
+input:not(.fixed) {
+    color: #1976d2;
+}
+
+/* одинаковые цифры */
+.same-number {
+    background-color: #dbeafe;
+}
+
+/* ошибка */
+.error {
+    background-color: #ffcdd2 !important;
+    color: #b71c1c !important;
+}
+
+/* активная */
+.active {
+    background-color: #bbdefb;
+}
+
+/* подсветка строки/колонки */
+.highlight {
+    background-color: #e3f2fd;
 }
